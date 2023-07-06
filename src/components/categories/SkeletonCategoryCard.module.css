@@ -1,4 +1,4 @@
-.company_card {
+.category_card {
     padding: 1em;
     margin: 1%;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
@@ -10,7 +10,7 @@
     /* transition: 1s; */
 }
 
-.company_card h4 {
+.category_card h4 {
     background-color: #5e35b1;
     color: #ffc643;
     border-radius: .5em;
@@ -20,17 +20,17 @@
     font-weight: 500;
 }
 
-.company_card p span {
+.category_card p span {
     font-weight: bold;
 }
 
 
-.company_card p {
+.category_card p {
     font-size: smaller;
     margin-bottom: .8em;
 }
 
-.company_card p a {
+.category_card p a {
     text-decoration: none;
     color: rgb(87, 26, 192);
     font-weight: 500;

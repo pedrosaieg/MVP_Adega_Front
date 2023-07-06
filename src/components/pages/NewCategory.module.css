@@ -1,13 +1,13 @@
-.newcompany_container {
+.newcategory_container {
     width: 600px;
     margin: 0 auto;
     padding: 3em;
 }
 
-.newcompany_container h1 {
+.newcategory_container h1 {
     margin-bottom: .5em;
 }
 
-.newcompany_container p {
+.newcategory_container p {
     color: #7b7b7b;
 }

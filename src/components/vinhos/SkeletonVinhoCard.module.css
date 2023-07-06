@@ -1,4 +1,4 @@
-.vaga_card {
+.vinho_card {
     padding: 1em;
     margin: 1%;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
@@ -10,11 +10,11 @@
     /* transition: 1s; */
 }
 
-.vaga_card p span {
+.vinho_card p span {
     font-weight: bold;
 }
 
-.vaga_card p {
+.vinho_card p {
     font-size: smaller;
     margin-bottom: .8em;
 }

@@ -1,0 +1,17 @@
+.landing_banner {
+    text-align: center;
+    padding: 100px;
+}
+
+.landing_banner h1 {
+font-size:65px;
+font-weight: 400;
+}
+
+.button_container {
+    margin:auto;
+    width: 30%;
+    display: flex;
+ justify-content: space-around;
+ text-align: center;
+}

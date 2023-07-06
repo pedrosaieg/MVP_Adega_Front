@@ -9,7 +9,7 @@ function Footer() {
             <ul className={styles.social_list}>
                 <a href="https://github.com/pedrosaieg?tab=repositories"><li><FaGithub /></li></a>
             </ul>
-            <p className={styles.copyright}><span>Vagas</span> &copy; Pedro Saieg</p>
+            <p className={styles.copyright}><span>Adega</span> &copy; Pedro Saieg</p>
         </footer >
     )
 }

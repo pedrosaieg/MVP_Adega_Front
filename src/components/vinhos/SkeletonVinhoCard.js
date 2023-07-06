@@ -1,12 +1,12 @@
 import Skeleton from "react-loading-skeleton"
-import styles from './SkeletonVagaCard.module.css'
+import styles from './SkeletonVinhoCard.module.css'
 
-function SkeletonVagaCard({ cards }) {
+function SkeletonVinhoCard({ cards }) {
     return (
         Array(cards)
             .fill(0)
             .map((item, i) =>
-                <div className={styles.vaga_card} key={i}>
+                <div className={styles.vinho_card} key={i}>
                     <p><Skeleton /></p>
                     <p><Skeleton /></p>
                     <p><Skeleton /></p>
@@ -17,4 +17,4 @@ function SkeletonVagaCard({ cards }) {
     )
 }
 
-export default SkeletonVagaCard
+export default SkeletonVinhoCard

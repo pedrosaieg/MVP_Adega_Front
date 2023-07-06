@@ -1,7 +1,7 @@
-import styles from './VagaCard.module.css'
+import styles from './VinhoCard.module.css'
 import { BsTrash3 } from 'react-icons/bs'
 
-function VagaCard({ id, cargo, modalidade_trabalho, modalidade_contrato, descricao, handleRemove }) {
+function VinhoCard({ id, cargo, modalidade_trabalho, modalidade_contrato, descricao, handleRemove }) {
 
     const remove = (e) => {
         e.preventDefault()
@@ -9,14 +9,14 @@ function VagaCard({ id, cargo, modalidade_trabalho, modalidade_contrato, descric
     }
 
     return (
-        <div className={styles.vaga_card}>
+        <div className={styles.vinho_card}>
             <div>
                 <p><span>Cargo: </span>{cargo}</p>
                 <p><span>Modalidade: </span>{modalidade_trabalho}</p>
                 <p><span>Contratação: </span>{modalidade_contrato}</p>
                 <p><span>Descrição: </span>{descricao}</p>
             </div>
-            <div className={styles.vaga_card_actions}>
+            <div className={styles.vinho_card_actions}>
                 <button onClick={remove} to="/">
                     <BsTrash3 />
                 </button>
@@ -25,4 +25,4 @@ function VagaCard({ id, cargo, modalidade_trabalho, modalidade_contrato, descric
     )
 }
 
-export default VagaCard
+export default VinhoCard

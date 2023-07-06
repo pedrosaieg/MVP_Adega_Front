@@ -1,4 +1,4 @@
-# MVP - Vagas Front
+# MVP - Adega Front
 
 Este pequeno projeto faz parte da entrega do MVP da disciplina **Desenvolvimento Full Stack Básico** 
 

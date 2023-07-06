@@ -2,20 +2,20 @@ import { useState } from 'react'
 
 import Input from '../form/Input'
 import SubmitButton from '../form/SubmitButton'
-import styles from '../companies/CompanyForm.module.css'
+import styles from '../categories/CategoryForm.module.css'
 import TextArea from '../form/TextArea'
 
-function VagaForm({ handleSubmit, textBtn }) {
+function VinhoForm({ handleSubmit, textBtn }) {
 
-    const [vaga, setVaga] = useState({})
+    const [vinho, setvinho] = useState({})
 
     function submit(e) {
         e.preventDefault()
-        handleSubmit(vaga)
+        handleSubmit(vinho)
     }
 
     function handleChange(e) {
-        setVaga({ ...vaga, [e.target.name]: [e.target.value] })
+        setvinho({ ...vinho, [e.target.name]: [e.target.value] })
     }
 
     return (
@@ -29,7 +29,7 @@ function VagaForm({ handleSubmit, textBtn }) {
             <TextArea type="text"
                 text="Descrição"
                 name="descricao"
-                placeholder="Descreva a vaga"
+                placeholder="Descreva a vinho"
                 handleOnChange={handleChange}
             />
             <Input type="text"
@@ -61,4 +61,4 @@ function VagaForm({ handleSubmit, textBtn }) {
     )
 }
 
-export default VagaForm
+export default VinhoForm

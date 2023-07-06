@@ -1,10 +1,10 @@
-import styles from './CompanyCard.module.css'
+import styles from './CategoryCard.module.css'
 
 import { Link } from 'react-router-dom'
 
 import { BsTrash3, BsEye } from 'react-icons/bs'
 
-function CompanyCard({ id, nome, ramo_atuacao, link, tamanho, vagas, handleRemove }) {
+function CategoryCard({ id, nome, ramo_atuacao, link, tamanho, vinhos, handleRemove }) {
 
     const remove = (e) => {
         e.preventDefault()
@@ -12,14 +12,14 @@ function CompanyCard({ id, nome, ramo_atuacao, link, tamanho, vagas, handleRemov
     }
 
     return (
-        <div className={styles.company_card}>
+        <div className={styles.category_card}>
             <h4>{nome}</h4>
             <p><span>Área de atuação: </span>{ramo_atuacao}</p>
             <p><span>Funcionários: </span>{tamanho}</p>
-            <p><span>Vagas: </span>{vagas}</p>
+            <p><span>Vinhos: </span>{vinhos}</p>
             <p><a href={link}>Website</a></p>
             <div className={styles.project_card_actions}>
-                <Link to={`/company/${id}`}>
+                <Link to={`/category/${id}`}>
                     <BsEye />
                 </Link>
                 <button onClick={remove} to="/">
@@ -30,4 +30,4 @@ function CompanyCard({ id, nome, ramo_atuacao, link, tamanho, vagas, handleRemov
     )
 }
 
-export default CompanyCard
+export default CategoryCard

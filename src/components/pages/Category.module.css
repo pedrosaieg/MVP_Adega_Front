@@ -1,34 +1,34 @@
-.company_details {
+.category_details {
     width: 100%;
     padding: 2em;
     /* display: flex; */
     /* display: contents; */
 }
 
-.company_details a {
+.category_details a {
     text-decoration: none;
 }
 
-.company_name {
+.category_name {
     margin-bottom: 10px;
     display: flex;
     flex: 1;
     justify-content: space-between;
 }
 
-.company_name h1 {
+.category_name h1 {
     min-width: 200px;
 }
 
 
 
-.company_details h1,
-.company_details h2,
-.company_details p {
+.category_details h1,
+.category_details h2,
+.category_details p {
     margin-bottom: .5em;
 }
 
-.company_details h1 {
+.category_details h1 {
     /* width: fit-content; */
     color: #ffc643;
     padding: 0 .5em;
@@ -37,7 +37,7 @@
 
 }
 
-.company_details span {
+.category_details span {
     font-weight: 600;
 }
 
@@ -50,7 +50,7 @@
     flex-wrap: wrap;
 }
 
-.vaga_form_container {
+.vinho_form_container {
     width: 100%;
     margin-top: 40px;
     margin-bottom: 1.2em;
@@ -61,7 +61,7 @@
     vertical-align: top;
 }
 
-.vaga_form_container h2 {
+.vinho_form_container h2 {
     margin-bottom: 2em;
     font-weight: 400;
 }
@@ -87,6 +87,6 @@
     text-decoration: none;
 }
 
-.company_info {
+.category_info {
     width: 100%;
 }

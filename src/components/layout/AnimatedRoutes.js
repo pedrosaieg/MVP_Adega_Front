@@ -1,9 +1,11 @@
 import React from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 
-import Home from '../pages/Home'
-import Company from '../pages/Company'
-import NewCompany from '../pages/NewCompany'
+
+import Landing from '../pages/Landing'
+import Categories from '../pages/Categories'
+import Category from '../pages/NewCategory'
+import NewCategory from '../pages/NewCategory'
 
 import { AnimatePresence } from 'framer-motion'
 
@@ -12,9 +14,10 @@ function AnimatedRoutes() {
     return (
         <AnimatePresence>
             <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Home />} />
-                <Route path="/newcompany" element={<NewCompany />} />
-                <Route exact path="/company/:id" element={<Company />} />
+                <Route path="/" element={<Landing />} />
+                <Route path="/categories" element={<Categories />} />
+                <Route path="/newcategory" element={<NewCategory />} />
+                <Route exact path="/category/:id" element={<Category />} />
             </Routes>
         </AnimatePresence>
     )
