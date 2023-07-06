@@ -1,0 +1,25 @@
+.container {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: top;
+
+}
+
+.min-height {
+    min-height: 75vh;
+}
+
+
+.start {
+    justify-content: space-between;
+    padding-bottom: 2em;
+}
+
+/* .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */

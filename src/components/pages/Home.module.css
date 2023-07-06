@@ -1,0 +1,32 @@
+.top_container {
+    padding: 2em;
+    align-items: top;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button_container {
+    margin-top: 1em;
+    align-items: center;
+}
+
+
+.top_container h1 {
+    font-size: 2em;
+    margin-bottom: .5em;
+    font-weight: 500;
+
+}
+
+.top_container h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+
+}
+
+.top_container h1 span {
+    color: #ffc643;
+    padding: 0 .2em;
+    background-color: #5e35b1;
+}

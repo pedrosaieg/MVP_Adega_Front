@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid;
+    border-color: rgb(233, 232, 232);
+    padding: 1em;
+    height: 12vh;
+    min-height: 140px;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.item {
+    margin-right: 1em;
+}
+
+.item a {
+    color: rgb(116, 116, 116);
+    text-decoration: none;
+}
+
+.item a:hover {
+    color: purple;
+    text-decoration: none;
+    transition: 0.4s;
+}
