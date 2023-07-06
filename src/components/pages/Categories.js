@@ -19,7 +19,7 @@ function Categories() {
 
     useEffect(() => {
         setTimeout(() => {
-            fetch('http://localhost:5000/empresas', {
+            fetch('http://localhost:5000/categorias', {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ function Categories() {
         formData.append('id', id);
         const newCategories = {};
 
-        fetch(`http://localhost:5000/empresa?id=${id}`, {
+        fetch(`http://localhost:5000/categoria?id=${id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'applicatin/json'
@@ -48,9 +48,9 @@ function Categories() {
         })
             .then(resp => resp.json())
             .then(() => {
-                const asArray = Categories.categories
+                const asArray = categories.categorias
                 const filtered = asArray.filter((category) => category.id !== id)
-                newCategories.categories = filtered
+                newCategories.categorias = filtered
                 toast.success('Categoria removida com sucesso.')
                 setCategories(newCategories)
             })
@@ -76,8 +76,8 @@ function Categories() {
             <Container customClass="start">
                 {!removeLoading ? <SkeletonCategoryCard cards={20} /> :
                     <>
-                        {categories.categories &&
-                            categories.categories.map(category => {
+                        {categories.categorias &&
+                            categories.categorias.map(category => {
                                 return <CategoryCard
                                     id={category.id}
                                     nome={category.nome}

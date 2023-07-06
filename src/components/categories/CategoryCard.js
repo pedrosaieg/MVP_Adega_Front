@@ -22,7 +22,7 @@ function CategoryCard({ id, nome, ramo_atuacao, link, tamanho, vinhos, handleRem
                 <Link to={`/category/${id}`}>
                     <BsEye />
                 </Link>
-                <button onClick={remove} to="/">
+                <button onClick={remove} to="/categories">
                     <BsTrash3 />
                 </button>
             </div>

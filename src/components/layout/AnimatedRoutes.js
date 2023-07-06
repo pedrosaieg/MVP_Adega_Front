@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 
 import Landing from '../pages/Landing'
 import Categories from '../pages/Categories'
-import Category from '../pages/NewCategory'
+import Category from '../pages/Category'
 import NewCategory from '../pages/NewCategory'
 
 import { AnimatePresence } from 'framer-motion'

@@ -20,7 +20,7 @@ function CategoryForm({ handleSubmit, btnText, categoryData }) {
 
     return (
         <form onSubmit={submit} className={styles.form}>
-            <Input type="text" text="Nome da empresa" name="nome" placeholder="Insira o nome" handleOnChange={handleChange} value={category.nome ? category.nome : ''} />
+            <Input type="text" text="Nome da categoria" name="nome" placeholder="Insira o nome" handleOnChange={handleChange} value={category.nome ? category.nome : ''} />
             <Input type="text" text="Área de atuação" name="ramo_atuacao" placeholder="Insira a área de atuação" handleOnChange={handleChange} value={category.ramo_atuacao ? category.ramo_atuacao : ''} />
             <TextArea type="text" text="Descrição" name="sobre" placeholder="Insira uma descrição" handleOnChange={handleChange} value={category.sobre ? category.sobre : ''} />
             <Input type="url" text="Página Web" name="link" placeholder="Insira a url da página web" handleOnChange={handleChange} value={category.link ? category.link : ''} />

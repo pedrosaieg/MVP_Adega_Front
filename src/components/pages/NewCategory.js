@@ -19,7 +19,7 @@ function NewCategory() {
         formData.append('link', category.link);
         formData.append('tamanho', category.tamanho);
 
-        fetch("http://localhost:5000/empresa",
+        fetch("http://localhost:5000/categoria",
             {
                 method: "POST",
                 // headers: {
@@ -29,8 +29,8 @@ function NewCategory() {
             })
             .then((resp) => resp.json())
             .then((data) => {
-                toast.success('Empresa cadastrada com sucesso.')
-                navigate('/')
+                toast.success('Categoria cadastrada com sucesso.')
+                navigate('/categories')
             })
             .catch(err => console.log(err))
     }
@@ -41,8 +41,8 @@ function NewCategory() {
             animate={{ width: "800px" }}
             exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
         >
-            <h1>Cadastre empresa</h1>
-            <p>Cadastre uma empresa para adicionar vinhos</p>
+            <h1>Cadastre categoria</h1>
+            <p>Cadastre uma categoria para adicionar vinhos</p>
             <CategoryForm handleSubmit={createPost} btnText="Salvar" />
         </motion.div>
     )

@@ -19,14 +19,14 @@ function Category() {
 
     const { id } = useParams()
 
-    const [Category, setCategory] = useState([])
+    const [category, setCategory] = useState([])
     const [allVinhos, setAllVinhos] = useState([])
     const [showCategoryForm, setShowCategoryForm] = useState(false)
     const [showVinhoForm, setShowVinhoForm] = useState(false)
 
     useEffect(() => {
         setTimeout(() => {
-            fetch(`http://localhost:5000/empresa?id=${id}`, {
+            fetch(`http://localhost:5000/categoria?id=${id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ function Category() {
     }, [id])
 
     function updatePageData() {
-        fetch(`http://localhost:5000/empresa?id=${id}`, {
+        fetch(`http://localhost:5000/categoria?id=${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ function Category() {
             .then(resp => resp.json())
             .then((data) => {
                 setCategory(data)
-                setAllVinos(data.vinhos)
+                setAllVinhos(data.vinhos)
             })
             .catch((err) => (console.log(err)))
 
@@ -62,7 +62,7 @@ function Category() {
         const formData = new FormData();
         formData.append('id', id);
 
-        fetch(`http://localhost:5000/Vinho?id=${id}`, {
+        fetch(`http://localhost:5000/vinho?id=${id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'applicatin/json'
@@ -71,7 +71,7 @@ function Category() {
             .then(resp => resp.json())
             .then(() => {
                 setAllVinhos(allVinhos.filter((Vinho) => Vinho.id !== id))
-                toast.success('Empresa removida com sucesso.')
+                toast.success('Categoria removida com sucesso.')
                 updatePageData()
             })
             .catch(err => console.log(err))
@@ -85,18 +85,18 @@ function Category() {
         setShowVinhoForm(!showVinhoForm)
     }
 
-    function editPost(Category) {
+    function editPost(category) {
 
         const formData = new FormData();
-        formData.append('id', Category.id);
-        formData.append('nome', Category.nome);
-        formData.append('ramo_atuacao', Category.ramo_atuacao);
-        formData.append('sobre', Category.sobre);
-        formData.append('link', Category.link);
-        formData.append('tamanho', Category.tamanho);
+        formData.append('id', category.id);
+        formData.append('nome', category.nome);
+        formData.append('ramo_atuacao', category.ramo_atuacao);
+        formData.append('sobre', category.sobre);
+        formData.append('link', category.link);
+        formData.append('tamanho', category.tamanho);
 
 
-        fetch("http://localhost:5000/empresa",
+        fetch("http://localhost:5000/categoria",
             {
                 method: "PUT",
                 // headers: {
@@ -107,7 +107,7 @@ function Category() {
             .then((resp) => resp.json())
             .then((data) => {
                 setCategory(data)
-                toast.success('Empresa alterada com sucesso.')
+                toast.success('Categoria alterada com sucesso.')
                 setShowCategoryForm(false)
             })
             .catch(err => console.log(err))
@@ -115,18 +115,18 @@ function Category() {
 
     }
 
-    function createVinho(Vinho) {
+    function createVinho(vinho) {
 
         const formData = new FormData();
-        formData.append('empresa_id', Category.id)
-        formData.append('cargo', Vinho.cargo);
-        formData.append('conhecimentos', Vinho.conhecimentos);
-        formData.append('descricao', Vinho.descricao);
-        formData.append('modalidade_contrato', Vinho.modalidade_contrato);
-        formData.append('modalidade_trabalho', Vinho.modalidade_trabalho);
-        formData.append('responsabilidades', Vinho.responsabilidades);
+        formData.append('categoria_id', category.id)
+        formData.append('cargo', vinho.cargo);
+        formData.append('conhecimentos', vinho.conhecimentos);
+        formData.append('descricao', vinho.descricao);
+        formData.append('modalidade_contrato', vinho.modalidade_contrato);
+        formData.append('modalidade_trabalho', vinho.modalidade_trabalho);
+        formData.append('responsabilidades', vinho.responsabilidades);
 
-        fetch("http://localhost:5000/Vinho",
+        fetch("http://localhost:5000/vinho",
             {
                 method: "POST",
                 // headers: {
@@ -150,35 +150,35 @@ function Category() {
             animate={{ width: "100%" }}
             exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
         >
-            <div className={styles.Category_details}>
+            <div className={styles.category_details}>
                 <div className={styles.details_container}>
-                    <div className={styles.Category_name}>
+                    <div className={styles.category_name}>
                         <h1>
-                            {Category.nome ? Category.nome :
+                            {category.nome ? category.nome :
                                 (<SkeletonTheme baseColor='#5e35b1' highlightColor='#7a5a8f'>
                                     <h4><Skeleton /></h4>
                                 </SkeletonTheme>)
                             }
                         </h1>
                         <button className={styles.btn} onClick={toggleCategoryForm}>
-                            {!showCategoryForm ? "Editar empresa" : 'Cancelar'}
+                            {!showCategoryForm ? "Editar categoria" : 'Cancelar'}
                         </button>
                     </div>
                     {!showCategoryForm ?
                         (
-                            Category.nome ?
+                            category.nome ?
                                 (
-                                    <div className={styles.Category_info}>
-                                        <p><span>Área de atuação: </span>{Category.ramo_atuacao}</p>
-                                        <p><span>Descrição: </span>{Category.sobre}</p>
-                                        <p><span>Website: </span><a href={Category.link}>{Category.link}</a></p>
-                                        <p><span>Funcionários: </span>{Category.tamanho}</p>
-                                        <p><span>Vinhos: </span>{(Category.vinhos).length}</p>
+                                    <div className={styles.category_info}>
+                                        <p><span>Área de atuação: </span>{category.ramo_atuacao}</p>
+                                        <p><span>Descrição: </span>{category.sobre}</p>
+                                        <p><span>Website: </span><a href={category.link}>{category.link}</a></p>
+                                        <p><span>Funcionários: </span>{category.tamanho}</p>
+                                        <p><span>Vinhos: </span>{(category.vinhos).length}</p>
                                     </div>
                                 )
                                 :
                                 (
-                                    <div className={styles.Category_info}>
+                                    <div className={styles.category_info}>
                                         <p><Skeleton /></p>
                                         <p><Skeleton /></p>
                                         <p><Skeleton /></p>
@@ -187,35 +187,35 @@ function Category() {
                                     </div>
                                 )
                         ) : (
-                            <div className={styles.Category_info}>
+                            <div className={styles.category_info}>
                                 <CategoryForm handleSubmit={editPost} btnText='Salvar' CategoryData={Category} />
                             </div>
                         )
                     }
                 </div>
-                <div className={styles.Vinho_form_container}>
-                    <h2>Vinhos da empresa</h2>
+                <div className={styles.vinho_form_container}>
+                    <h2>Vinhos na categoria</h2>
                     <button className={styles.btn} onClick={toggleVinhoForm}>
                         {!showVinhoForm ? "Adicionar Vinho" : 'Cancelar'}
                     </button>
-                    <div className={styles.Category_info}>
+                    <div className={styles.category_info}>
                         {showVinhoForm && (
                             <VinhoForm handleSubmit={createVinho}
                                 textBtn={"Salvar"} />
                         )}
                     </div>
                     <Container customClass="start">
-                        {Category.nome ?
+                        {category.nome ?
                             (
-                                Category.vinhos.length > 0 ?
-                                    allVinhos.map((Vinho) => (
+                                category.vinhos.length > 0 ?
+                                    allVinhos.map((vinho) => (
                                         <VinhoCard
-                                            id={Vinho.id}
-                                            key={Vinho.id}
-                                            cargo={Vinho.cargo}
-                                            modalidade_trabalho={Vinho.modalidade_trabalho}
-                                            modalidade_contrato={Vinho.modalidade_contrato}
-                                            descricao={Vinho.descricao}
+                                            id={vinho.id}
+                                            key={vinho.id}
+                                            cargo={vinho.cargo}
+                                            modalidade_trabalho={vinho.modalidade_trabalho}
+                                            modalidade_contrato={vinho.modalidade_contrato}
+                                            descricao={vinho.descricao}
                                             handleRemove={removeVinho}
                                         />
                                     ))
