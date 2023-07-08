@@ -1,17 +1,40 @@
 .landing_banner {
-    text-align: center;
-    padding: 100px;
+    display: flex;
+    color: #FFF;
+    text-align: right;
+    font-style: normal;
+    line-height: normal;
+    flex-direction: column;
+
 }
 
 .landing_banner h1 {
-font-size:65px;
-font-weight: 400;
+    font-size: 65px;
+    font-weight: 400;
 }
 
 .button_container {
-    margin:auto;
-    width: 30%;
+    width: 100%;
+    margin-top: 50px;
     display: flex;
- justify-content: space-around;
- text-align: center;
+    justify-content: flex-end;
+}
+
+.left {
+    width: 50%;
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 100px;
+
+}
+
+.divider {
+    display: flex;
+    height: 100%;
 }

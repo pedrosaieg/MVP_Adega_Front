@@ -7,8 +7,9 @@
 }
 
 .button_container {
-    margin-top: 1em;
+    margin-top: 3em;
     align-items: center;
+    margin-bottom: 5em;
 }
 
 
@@ -25,8 +26,50 @@
 
 }
 
+.background {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+}
+
 .top_container h1 span {
     color: #ffc643;
     padding: 0 .2em;
     background-color: #5e35b1;
+}
+
+.left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 100px;
+
+}
+
+.divider {
+    display: flex;
+    height: 100%;
+}
+
+.categories_banner {
+    display: flex;
+    color: #FFF;
+    text-align: left;
+    font-style: normal;
+    line-height: normal;
+    flex-direction: column;
+}
+
+.categories_banner h1 {
+    font-size: 65px;
+    font-weight: 400;
 }

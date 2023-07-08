@@ -1,12 +1,10 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
-    background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid;
-    border-color: rgb(233, 232, 232);
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 1em;
     height: 12vh;
-    min-height: 140px;
+    min-height: 100px;
+    max-height: 200px;
     align-items: center;
 }
 
@@ -28,5 +26,20 @@
 .item a:hover {
     color: purple;
     text-decoration: none;
+    transition: 0.4s;
+}
+
+.img_container {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+}
+
+.img_container img {
+    height: 100%;
+}
+
+.img_container img:hover {
+    rotate: 20deg;
     transition: 0.4s;
 }

@@ -61,43 +61,48 @@ function Categories() {
         <motion.div
             inition={{ width: 0 }}
             animate={{ width: "100%" }}
-            exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+            exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
         >
-            <section className={styles.top_container}>
-                <div>
-                    <h1>Bem-vindo ao <span>Minha adega</span></h1>
-                    <h3>Suas categorias</h3>
+            <div className={styles.background}>
+                <div className={styles.divider}>
+                    <div className={styles.left}>
+                        <div className={styles.categories_banner}>
+                            <h1>olá, Pedro Saieg</h1>
+                            <h1> este é o resumo da sua adega</h1>
+                        </div>
+                    </div>
+                    <div className={styles.right}>
+                        <div className={styles.button_container}>
+                            <LinkButton to="/newcategory" text="Nova categoria"></LinkButton>
+                        </div>
+                        <Container customClass="start">
+                            {!removeLoading ? <SkeletonCategoryCard cards={4} /> :
+                                <>
+                                    {categories.categorias &&
+                                        categories.categorias.map(category => {
+                                            return <CategoryCard
+                                                id={category.id}
+                                                nome={category.nome}
+                                                ramo_atuacao={category.ramo_atuacao}
+                                                link={category.link}
+                                                tamanho={category.tamanho}
+                                                vinhos={category.vinhos}
+                                                key={category.id}
+                                                handleRemove={removeCategory}
+                                            />;
+                                        })}
+                                </>
+                            }
+                        </Container>
+
+
+                        {removeLoading && !categories.categories && (
+                            <p>Você ainda não cadastrou nenhuma categoria.</p>
+                        )}
+                    </div>
+
                 </div>
-                <div className={styles.button_container}>
-                    <LinkButton to="/newcategory" text="Nova categoria"></LinkButton>
-                </div>
-            </section>
-
-            <Container customClass="start">
-                {!removeLoading ? <SkeletonCategoryCard cards={20} /> :
-                    <>
-                        {categories.categorias &&
-                            categories.categorias.map(category => {
-                                return <CategoryCard
-                                    id={category.id}
-                                    nome={category.nome}
-                                    ramo_atuacao={category.ramo_atuacao}
-                                    link={category.link}
-                                    tamanho={category.tamanho}
-                                    vinhos={category.vinhos}
-                                    key={category.id}
-                                    handleRemove={removeCategory}
-                                />;
-                            })}
-                    </>
-                }
-            </Container>
-
-
-            {removeLoading && !categories.categories && (
-                <p>Não há categorias cadastradas.</p>
-            )}
-
+            </div>
         </motion.div >
     )
 }
