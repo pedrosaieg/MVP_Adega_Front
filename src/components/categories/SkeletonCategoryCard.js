@@ -7,10 +7,9 @@ function SkeletonCategoryCard({ cards }) {
             .fill(0)
             .map((item, i) =>
                 <div className={styles.category_card} key={i}>
-                    <SkeletonTheme baseColor='#5e35b1' highlightColor='#7a5a8f'>
+                    <SkeletonTheme baseColor='#2E1D1D' highlightColor='#ffc643'>
                         <h4><Skeleton /></h4>
                     </SkeletonTheme>
-                    <p><Skeleton /></p>
                     <p><Skeleton /></p>
                     <p><Skeleton /></p>
                     <p><Skeleton /></p>

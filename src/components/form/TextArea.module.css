@@ -6,23 +6,27 @@
 
 .form_control label {
     margin-bottom: .3em;
-    font-weight: 500;
+    font-weight: 300;
+    color: white;
 }
 
 .form_control textarea {
     padding: .7em;
-    border-radius: 1em;
-    border: 1px solid rgb(218, 215, 215);
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 2px solid #F2B8B5;
+    background-color: #8f8b91;
 }
 
 .form_control textarea:hover {
-    border: 1px solid #ffc643;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 2px solid #ffc643;
 }
 
 .form_control textarea:focus {
-    outline: 1px solid #5e35b1;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 2px solid #ffc643;
 }
 
 .form_control textarea::placeholder {
-    color: #7b7b7b;
+    color: rgb(231, 229, 229);
 }

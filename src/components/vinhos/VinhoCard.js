@@ -1,7 +1,7 @@
 import styles from './VinhoCard.module.css'
 import { BsTrash3 } from 'react-icons/bs'
 
-function VinhoCard({ id, cargo, modalidade_trabalho, modalidade_contrato, descricao, handleRemove }) {
+function VinhoCard({ id, nome, uva, descricao, handleRemove }) {
 
     const remove = (e) => {
         e.preventDefault()
@@ -11,9 +11,8 @@ function VinhoCard({ id, cargo, modalidade_trabalho, modalidade_contrato, descri
     return (
         <div className={styles.vinho_card}>
             <div>
-                <p><span>Cargo: </span>{cargo}</p>
-                <p><span>Modalidade: </span>{modalidade_trabalho}</p>
-                <p><span>Contratação: </span>{modalidade_contrato}</p>
+                <p><span>Nome: </span>{nome}</p>
+                <p><span>Uva: </span>{uva}</p>
                 <p><span>Descrição: </span>{descricao}</p>
             </div>
             <div className={styles.vinho_card_actions}>

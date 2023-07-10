@@ -76,16 +76,15 @@ function Categories() {
                             <LinkButton to="/newcategory" text="Nova categoria"></LinkButton>
                         </div>
                         <Container customClass="start">
-                            {!removeLoading ? <SkeletonCategoryCard cards={4} /> :
+                            {!removeLoading ? <SkeletonCategoryCard cards={3} /> :
                                 <>
                                     {categories.categorias &&
                                         categories.categorias.map(category => {
                                             return <CategoryCard
                                                 id={category.id}
                                                 nome={category.nome}
-                                                ramo_atuacao={category.ramo_atuacao}
-                                                link={category.link}
-                                                tamanho={category.tamanho}
+                                                pais={category.pais}
+                                                descricao={category.descricao}
                                                 vinhos={category.vinhos}
                                                 key={category.id}
                                                 handleRemove={removeCategory}

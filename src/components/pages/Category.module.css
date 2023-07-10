@@ -20,8 +20,6 @@
     min-width: 200px;
 }
 
-
-
 .category_details h1,
 .category_details h2,
 .category_details p {
@@ -89,4 +87,34 @@
 
 .category_info {
     width: 100%;
+}
+
+.left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-left: 12em;
+    padding-right: 10em;
+}
+
+.right {
+    margin-top: 5em;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 12em;
+
+}
+
+.divider {
+    display: flex;
+    height: 100%;
+}
+
+.background {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
 }

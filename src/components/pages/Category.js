@@ -13,7 +13,9 @@ import CategoryForm from '../categories/CategoryForm'
 import Container from '../layout/Container'
 import VinhoForm from '../vinhos/VinhoForm'
 import VinhoCard from '../vinhos/VinhoCard'
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+
+import CategoryCard from '../categories/CategoryCard'
+import SkeletonCategoryCard from '../categories/SkeletonCategoryCard'
 
 function Category() {
 
@@ -90,10 +92,8 @@ function Category() {
         const formData = new FormData();
         formData.append('id', category.id);
         formData.append('nome', category.nome);
-        formData.append('ramo_atuacao', category.ramo_atuacao);
-        formData.append('sobre', category.sobre);
-        formData.append('link', category.link);
-        formData.append('tamanho', category.tamanho);
+        formData.append('pais', category.pais);
+        formData.append('descricao', category.descricao);
 
 
         fetch("http://localhost:5000/categoria",
@@ -119,12 +119,9 @@ function Category() {
 
         const formData = new FormData();
         formData.append('categoria_id', category.id)
-        formData.append('cargo', vinho.cargo);
-        formData.append('conhecimentos', vinho.conhecimentos);
+        formData.append('nome', vinho.nome);
+        formData.append('uva', vinho.uva);
         formData.append('descricao', vinho.descricao);
-        formData.append('modalidade_contrato', vinho.modalidade_contrato);
-        formData.append('modalidade_trabalho', vinho.modalidade_trabalho);
-        formData.append('responsabilidades', vinho.responsabilidades);
 
         fetch("http://localhost:5000/vinho",
             {
@@ -150,84 +147,83 @@ function Category() {
             animate={{ width: "100%" }}
             exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
         >
-            <div className={styles.category_details}>
-                <div className={styles.details_container}>
-                    <div className={styles.category_name}>
-                        <h1>
-                            {category.nome ? category.nome :
-                                (<SkeletonTheme baseColor='#5e35b1' highlightColor='#7a5a8f'>
-                                    <h4><Skeleton /></h4>
-                                </SkeletonTheme>)
-                            }
-                        </h1>
+            <div className={styles.background}>
+                <div className={styles.divider}>
+                    <div className={styles.left} >
+
                         <button className={styles.btn} onClick={toggleCategoryForm}>
                             {!showCategoryForm ? "Editar categoria" : 'Cancelar'}
                         </button>
-                    </div>
-                    {!showCategoryForm ?
-                        (
-                            category.nome ?
-                                (
-                                    <div className={styles.category_info}>
-                                        <p><span>Área de atuação: </span>{category.ramo_atuacao}</p>
-                                        <p><span>Descrição: </span>{category.sobre}</p>
-                                        <p><span>Website: </span><a href={category.link}>{category.link}</a></p>
-                                        <p><span>Funcionários: </span>{category.tamanho}</p>
-                                        <p><span>Vinhos: </span>{(category.vinhos).length}</p>
-                                    </div>
-                                )
-                                :
-                                (
-                                    <div className={styles.category_info}>
-                                        <p><Skeleton /></p>
-                                        <p><Skeleton /></p>
-                                        <p><Skeleton /></p>
-                                        <p><Skeleton /></p>
-                                        <p><Skeleton /></p>
-                                    </div>
-                                )
-                        ) : (
-                            <div className={styles.category_info}>
+
+                        {!category.nome ? <SkeletonCategoryCard cards={1} /> :
+                            <CategoryCard
+                                id={category.id}
+                                nome={category.nome}
+                                pais={category.pais}
+                                descricao={category.descricao}
+                                vinhos={(category.vinhos).length}
+                                key={category.id}
+                            />
+                        }
+
+                        {!showCategoryForm ?
+                            (<div></div>
+
+                            ) : (<div className={styles.category_info}>
                                 <CategoryForm handleSubmit={editPost} btnText='Salvar' CategoryData={Category} />
-                            </div>
-                        )
-                    }
-                </div>
-                <div className={styles.vinho_form_container}>
-                    <h2>Vinhos na categoria</h2>
-                    <button className={styles.btn} onClick={toggleVinhoForm}>
-                        {!showVinhoForm ? "Adicionar Vinho" : 'Cancelar'}
-                    </button>
-                    <div className={styles.category_info}>
-                        {showVinhoForm && (
-                            <VinhoForm handleSubmit={createVinho}
-                                textBtn={"Salvar"} />
-                        )}
+                            </div>)
+                        }
                     </div>
-                    <Container customClass="start">
-                        {category.nome ?
-                            (
-                                category.vinhos.length > 0 ?
-                                    allVinhos.map((vinho) => (
-                                        <VinhoCard
-                                            id={vinho.id}
-                                            key={vinho.id}
-                                            cargo={vinho.cargo}
-                                            modalidade_trabalho={vinho.modalidade_trabalho}
-                                            modalidade_contrato={vinho.modalidade_contrato}
-                                            descricao={vinho.descricao}
-                                            handleRemove={removeVinho}
-                                        />
-                                    ))
-                                    : (<p>Não há vinhos cadastradas.</p>)
-                            ) : (
-                                <SkeletonVinhoCard cards={10} />
-                            )}
 
+                    <div className={styles.right}>
+                        <div>
+                            <div className={styles.vinho_form_container}>
+                                <h2>Vinhos na categoria</h2>
+                                <button className={styles.btn} onClick={toggleVinhoForm}>
+                                    {!showVinhoForm ? "Adicionar Vinho" : 'Cancelar'}
+                                </button>
+                                <div className={styles.category_info}>
+                                    {showVinhoForm && (
+                                        <VinhoForm handleSubmit={createVinho}
+                                            textBtn={"Salvar"} />
+                                    )}
+                                </div>
+                                <Container customClass="start">
+                                    {category.nome ?
+                                        (
+                                            category.vinhos.length > 0 ?
+                                                allVinhos.map((vinho) => (
+                                                    <VinhoCard
+                                                        id={vinho.id}
+                                                        key={vinho.id}
+                                                        nome={vinho.nome}
+                                                        uva={vinho.uva}
+                                                        descricao={vinho.descricao}
+                                                        handleRemove={removeVinho}
+                                                    />
+                                                ))
+                                                : (<p>Não há vinhos cadastradas.</p>)
+                                        ) : (
+                                            <SkeletonVinhoCard cards={4} />
+                                        )}
 
-
-                    </Container>
+                                </Container>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+
+
+            <div className={styles.category_details}>
+                <div className={styles.details_container}>
+                    <div className={styles.category_name}>
+
+                    </div>
+
+                </div>
+
             </div >
 
 

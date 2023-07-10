@@ -14,10 +14,8 @@ function NewCategory() {
 
         const formData = new FormData();
         formData.append('nome', category.nome);
-        formData.append('ramo_atuacao', category.ramo_atuacao);
-        formData.append('sobre', category.sobre);
-        formData.append('link', category.link);
-        formData.append('tamanho', category.tamanho);
+        formData.append('pais', category.pais);
+        formData.append('descricao', category.descricao);
 
         fetch("http://localhost:5000/categoria",
             {
@@ -36,14 +34,29 @@ function NewCategory() {
     }
 
     return (
-        <motion.div className={styles.newcategory_container}
+        <motion.div
             inition={{ width: 0 }}
-            animate={{ width: "800px" }}
+            animate={{ width: "100%" }}
             exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
         >
-            <h1>Cadastre categoria</h1>
-            <p>Cadastre uma categoria para adicionar vinhos</p>
-            <CategoryForm handleSubmit={createPost} btnText="Salvar" />
+            <div className={styles.background}>
+                <div className={styles.divider}>
+                    <div className={styles.left} >
+                    </div>
+
+                    <div className={styles.right}>
+                        <div>
+                            <h1>Cadastre uma categoria</h1>
+                            <p>Cadastre uma categoria para adicionar vinhos</p>
+                            <CategoryForm handleSubmit={createPost} btnText="Salvar" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </motion.div>
     )
 }
