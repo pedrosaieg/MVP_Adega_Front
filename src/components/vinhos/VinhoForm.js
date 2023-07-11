@@ -22,7 +22,7 @@ function VinhoForm({ handleSubmit, textBtn }) {
         <form onSubmit={submit} className={styles.form}>
             <Input type="text"
                 text="Nome"
-                name="Nome"
+                name="nome"
                 placeholder="Insira o nome do vinho"
                 handleOnChange={handleChange}
             />
@@ -38,7 +38,10 @@ function VinhoForm({ handleSubmit, textBtn }) {
                 placeholder="Descreva a vinho"
                 handleOnChange={handleChange}
             />
-            <SubmitButton text={textBtn} />
+            <div className={styles.end}>
+                <SubmitButton text={textBtn} />
+
+            </div>
         </form>
     )
 }

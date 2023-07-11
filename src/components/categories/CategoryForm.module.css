@@ -1,11 +1,17 @@
 .form {
-    width: 120%;
-    margin: 2em 0;
+    width: 100%;
+    margin: 1.5em 0;
 }
 
 .buttons {
     margin: 4em 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.end {
+    margin-top: 2em;
     display: flex;
     justify-content: center;
 }

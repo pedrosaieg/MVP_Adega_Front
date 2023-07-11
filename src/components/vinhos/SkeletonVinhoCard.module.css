@@ -1,13 +1,13 @@
 .vinho_card {
     padding: 1em;
     margin: 1%;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 1em;
-    /* width: 23%; */
+    box-shadow: 0 1px 1px 0 rgba(219, 214, 214, 0.144), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: .8em;
     flex: 1;
-    min-width: 300px;
-    /* max-width: 40%; */
-    /* transition: 1s; */
+    min-width: 40vw;
+    background-color: #2E1D1D;
+    color: rgba(255, 255, 255, 0.897);
+    max-height: 21vh;
 }
 
 .vinho_card p span {

@@ -50,42 +50,47 @@
 
 .vinho_form_container {
     width: 100%;
-    margin-top: 40px;
-    margin-bottom: 1.2em;
+    margin-bottom: 2em;
     padding-bottom: 1.2em;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    vertical-align: top;
+    color: white;
 }
 
 .vinho_form_container h2 {
-    margin-bottom: 2em;
     font-weight: 400;
 }
 
 .btn {
-    background-color: #ffc643;
-    color: #5e35b1;
+    background-color: #ffffff00;
+    color: #ffffff;
     padding: 1em 1em;
-    border-radius: 2em;
+    border-style: solid;
+    border-width: .5px;
     text-decoration: none;
     transition: .3s;
-    border: none;
     cursor: pointer;
-    max-height: 60px;
     font-size: medium;
+    min-width: 130px;
+    border-radius: 2em;
+    border-color: white;
+}
+
+.cat_form {
+    width: 100%;
 }
 
 .btn:hover {
-    background-color: #5e35b1;
+    background-color: #572121;
     color: white;
-    padding: 1.1em 1.1em;
+    border-color: #572121;
+    padding: 1em 1em;
     border-radius: 2em;
     text-decoration: none;
 }
 
-.category_info {
+.vinho_info {
     width: 100%;
 }
 
@@ -94,9 +99,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: center;
-    margin-left: 12em;
-    padding-right: 10em;
+    /* margin-right: -5em; */
+    margin-left: 8em;
+    padding-right: 15em;
+    margin-top: 5em;
 }
 
 .right {
@@ -104,8 +110,8 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-right: 12em;
+    align-items: flex-end;
+    margin-right: 8em;
 
 }
 
@@ -114,7 +120,19 @@
     height: 100%;
 }
 
+.spacing {
+    margin-bottom: 2em;
+}
+
 .background {
     background-color: rgba(0, 0, 0, 0.4);
     height: 100%;
+}
+
+.top_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2em;
 }

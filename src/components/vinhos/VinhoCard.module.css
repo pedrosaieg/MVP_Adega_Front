@@ -1,47 +1,61 @@
 .vinho_card {
-    font-weight: 300;
     padding: 1em;
-    margin: 2%;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.05);
-    border-radius: 1em;
-    /* width: 23%; */
+    margin: 1%;
+    box-shadow: 0 1px 1px 0 rgba(219, 214, 214, 0.144), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: .8em;
     flex: 1;
-    min-width: 300px;
+    min-width: 35vw;
+    background-color: #2E1D1D;
+    color: rgba(255, 255, 255, 0.897);
+    max-height: 21vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.vinho_card:hover {
+    opacity: 1;
+}
+
+.vinho_card_actions {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    /* max-width: 40%; */
-    /* transition: 1s; */
+    opacity: 0.2;
 }
 
 .vinho_card_actions a,
 .vinho_card_actions button {
     text-decoration: none;
     border: none;
-    background-color: #FFF;
-    color: #827a7a;
+    color: #fdfdfd;
+    background-color: #5e35b100;
     font-size: 1.2em;
-    padding: 0 1em;
+    padding: 0 1.5em;
     cursor: pointer;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.vinho_card_actions a:hover {
-    color: #242b90;
-    transition: ease-in-out .3s;
 }
 
 .vinho_card_actions button:hover {
     color: #de3f23;
     transition: .3s;
+    opacity: 1;
 }
 
-.category_card:hover .vinho_card_actions {
+.card_direction {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.vinho_card p span {
+    font-weight: bold;
+}
+
+.vinho_card p {
+    font-size: medium;
+    margin-bottom: .8em;
+}
+
+.vinho_card:hover .vinho_card_actions {
+    display: flex;
     opacity: 1;
     transition: all .4s ease-in-out;
 }

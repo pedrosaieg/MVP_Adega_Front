@@ -133,7 +133,7 @@ function Category() {
             })
             .then((resp) => resp.json())
             .then((data) => {
-                toast.success('Vinho cadastrada com sucesso.')
+                toast.success('Vinho cadastrado com sucesso.')
                 setShowVinhoForm(false)
                 updatePageData()
                 console.log(...formData)
@@ -150,44 +150,52 @@ function Category() {
             <div className={styles.background}>
                 <div className={styles.divider}>
                     <div className={styles.left} >
+                        <div className={styles.spacing}>
 
-                        <button className={styles.btn} onClick={toggleCategoryForm}>
-                            {!showCategoryForm ? "Editar categoria" : 'Cancelar'}
-                        </button>
+                            <button className={styles.btn} onClick={toggleCategoryForm}>
+                                {!showCategoryForm ? "Editar categoria" : 'Cancelar'}
+                            </button>
+                        </div>
+                        <div className={styles.cat_form}>
+                            {!showCategoryForm ?
+                                (<div></div>
 
-                        {!category.nome ? <SkeletonCategoryCard cards={1} /> :
-                            <CategoryCard
-                                id={category.id}
-                                nome={category.nome}
-                                pais={category.pais}
-                                descricao={category.descricao}
-                                vinhos={(category.vinhos).length}
-                                key={category.id}
-                            />
-                        }
-
-                        {!showCategoryForm ?
-                            (<div></div>
-
-                            ) : (<div className={styles.category_info}>
-                                <CategoryForm handleSubmit={editPost} btnText='Salvar' CategoryData={Category} />
-                            </div>)
-                        }
+                                ) : (<div className={styles.category_info}>
+                                    <CategoryForm handleSubmit={editPost} btnText='Salvar' CategoryData={Category} />
+                                </div>)
+                            }
+                        </div>
+                        <div>
+                            {!category.nome ? <SkeletonCategoryCard cards={1} /> :
+                                <CategoryCard
+                                    id={category.id}
+                                    nome={category.nome}
+                                    pais={category.pais}
+                                    descricao={category.descricao}
+                                    vinhos={(category.vinhos).length}
+                                    key={category.id}
+                                />
+                            }
+                        </div>
                     </div>
 
                     <div className={styles.right}>
                         <div>
                             <div className={styles.vinho_form_container}>
-                                <h2>Vinhos na categoria</h2>
-                                <button className={styles.btn} onClick={toggleVinhoForm}>
-                                    {!showVinhoForm ? "Adicionar Vinho" : 'Cancelar'}
-                                </button>
-                                <div className={styles.category_info}>
+                                <div className={styles.top_section}>
+                                    <h2>Vinhos na categoria</h2>
+
+                                    <button className={styles.btn} onClick={toggleVinhoForm}>
+                                        {!showVinhoForm ? "Adicionar Vinho" : 'Cancelar'}
+                                    </button>
+                                </div>
+                                <div className={styles.vinho_info}>
                                     {showVinhoForm && (
                                         <VinhoForm handleSubmit={createVinho}
                                             textBtn={"Salvar"} />
                                     )}
                                 </div>
+
                                 <Container customClass="start">
                                     {category.nome ?
                                         (
@@ -204,7 +212,7 @@ function Category() {
                                                 ))
                                                 : (<p>Não há vinhos cadastradas.</p>)
                                         ) : (
-                                            <SkeletonVinhoCard cards={4} />
+                                            <SkeletonVinhoCard cards={3} />
                                         )}
 
                                 </Container>
@@ -213,20 +221,6 @@ function Category() {
                     </div>
                 </div>
             </div>
-
-
-
-            <div className={styles.category_details}>
-                <div className={styles.details_container}>
-                    <div className={styles.category_name}>
-
-                    </div>
-
-                </div>
-
-            </div >
-
-
         </motion.div>
     )
 }

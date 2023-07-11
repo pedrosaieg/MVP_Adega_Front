@@ -10,7 +10,6 @@ function SkeletonVinhoCard({ cards }) {
                     <p><Skeleton /></p>
                     <p><Skeleton /></p>
                     <p><Skeleton /></p>
-                    <p><Skeleton /></p>
                 </div >
             )
 
