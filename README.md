@@ -1,7 +1,8 @@
 # MVP - Adega Front
 
-Este pequeno projeto faz parte da entrega do MVP da disciplina **Desenvolvimento Full Stack Básico** 
+Este pequeno projeto faz parte da entrega do MVP da disciplina **Desenvolvimento Front-end Avançado** 
 
+Link do Figma: https://www.figma.com/file/YxK2Jsd1e2sNdIXVmDTcLq/MVP-FrontEnd-Avan%C3%A7ado?type=design&node-id=2%3A2&mode=design&t=CJC5p84kENo829ph-1
 ---
 ## Como executar 
 
